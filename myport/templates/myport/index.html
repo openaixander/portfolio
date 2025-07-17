@@ -1,1 +1,178 @@
-<p>Hello World</p>
+{% extends 'myport/base.html' %}
+{% load static %}
+
+{% block title %}
+    Al'ameen Dalha - Django Developer
+{% endblock title %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'files/css/homepage.css' %}">
+{% endblock style %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="hero-content">
+                        <h1 class="hero-title fade-in-up">
+                            Hi, I'm <span class="highlight">Al'ameen Dalha</span>
+                        </h1>
+                        <p class="hero-subtitle fade-in-up fade-in-delay-1">
+                            A Backend - Django Developer building real-world solutions with code
+                        </p>
+                        
+                        <div class="mb-4 fade-in-up fade-in-delay-2">
+                            <p class="lead">
+                                I'm passionate about building solutions that matter in Africa, leveraging modern web technologies to create impactful applications that solve real-world problems.
+                            </p>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-3 fade-in-up fade-in-delay-3">
+                            <a href="{% url 'myport:projects' %}" class="btn btn-primary-custom">
+                                <i class="fas fa-code me-2"></i>View My Projects
+                            </a>
+                            <a href="" download="Alameen_Dalha_resume.pdf" class="btn btn-outline-custom">
+                                <i class="fas fa-download me-2"></i>Download Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1 text-center mb-4 mb-lg-0">
+                    <!-- Replace this with your actual photo -->
+                    <div class="avatar-placeholder fade-in-up">
+                        <!-- <i class="fas fa-user"></i> -->
+                        <img src="{% static 'images/developer.jpg' %}" alt="Al'ameen Dalha" class="profile-image fade-in-up">
+                    </div>
+                    <!-- When you have your photo, replace the avatar-placeholder div with:
+                    -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">My Tech Stack</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h5>Python</h5>
+                        <p class="text-muted">Backend Development</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h5>Django</h5>
+                        <p class="text-muted">Web Framework</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h5>HTML/CSS</h5>
+                        <p class="text-muted">Frontend Markup</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <h5>Bootstrap</h5>
+                        <p class="text-muted">UI Framework</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h5>Celery</h5>
+                        <p class="text-muted">Task Queue</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h5>Redis</h5>
+                        <p class="text-muted">Caching & Broker</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h5>Git</h5>
+                        <p class="text-muted">Version Control</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h5>API Development</h5>
+                        <p class="text-muted">RESTful Services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="py-5" style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Core Values</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="values-card">
+                        <div class="values-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Innovation</h4>
+                        <p>Constantly exploring new technologies and approaches to solve complex problems with creative solutions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="values-card">
+                        <div class="values-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Impact</h4>
+                        <p>Building applications that make a real difference in people's lives, especially in the African context.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="values-card">
+                        <div class="values-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Quality</h4>
+                        <p>Writing clean, maintainable code that follows best practices and industry standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ {% endblock content %}   
+
+{% block script %}
+   <script src="{% static 'includes/js/homepage.js' %}"></script>
+{% endblock script %}
+    

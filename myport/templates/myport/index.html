@@ -7,7 +7,7 @@ Al'ameen Dalha - Django Developer
 
 
 {% block style %}
-    {% static 'includes/css/homepage.css' %}
+    <link rel="stylesheet" href="{% static 'includes/css/homepage.css' %}">
 {% endblock style %}
 
 {% block content %}
@@ -173,6 +173,6 @@ Al'ameen Dalha - Django Developer
  {% endblock content %}   
 
 {% block script %}
-    {% static 'includes/js/homepage.js' %}
+   <script src="{% static 'includes/js/homepage.js' %}"></script>
 {% endblock script %}
     

@@ -1,0 +1,111 @@
+{% extends "myport/base.html" %}
+
+{% block title %}Projects - Al'ameen Dalha{% endblock title %}
+
+
+{% block style %}
+    {% include 'myport/includes/css/projects.css' %}
+{% endblock style %}
+   
+
+{% block content %}
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">My Projects</h1>
+            <p class="page-subtitle">
+                Explore my portfolio of Django applications, showcasing real-world solutions built with modern web technologies
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            
+            {% for project in projects %}
+            <div class="project-card fade-in-up">
+                <div class="project-image-container">
+                    <div id="project{{ forloop.counter }}Carousel" class="carousel slide project-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for image in project.images.all %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <!-- <div class="screenshot-placeholder">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div> -->
+                                <img src="{{ image.image.url }}" class="d-block w-100 project-screenshot" alt="{{ image.alt_text }}">
+                            </div>
+                            {% empty %}
+                            <div class="carousel-item">
+                                <div class="screenshot-placeholder">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#project{{ forloop.counter }}Carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#project{{ forloop.counter }}Carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-summary">
+                        {{ project.summary|truncatewords:100 }}
+                    </p>
+                    
+                    <div class="project-links">
+                        {% if project.live_link %}
+                        <a href="{{ project.live_link }}" class="btn-live" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Live
+                        </a>
+                        {% endif %}
+                        {% if project.code_link %}
+                        <a href="{{ project.code_link }}" class="btn-code" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                        {% endif %}
+                    </div>
+
+                    <div class="features-section">
+                        <h4 class="features-title">Key Features</h4>
+                        <ul class="features-list">
+                            {% for feature in project.features.all %}
+                                <li>{{ feature.description }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="tech-stack-section">
+                        <h4 class="tech-stack-title">Tech Stack</h4>
+                        <div class="tech-tags">
+                            {% for tech in project.technologies.all %}
+                                <span class="tech-tag">{{ tech.name }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+    
+    <!-- Lightbox for images -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    {% include 'myport/includes/js/projects.js' %}
+{% endblock script %}

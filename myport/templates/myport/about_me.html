@@ -1,0 +1,140 @@
+{% extends 'myport/base.html' %}
+
+{% block title %}
+About - Al'ameen Dalha - Django Developer
+{% endblock title %}
+
+
+{% block style %}
+    {% include 'myport/includes/css/about.css' %}
+{% endblock style %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="about" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in-up">
+                    👋 Hey there, I'm <span class="highlight">Al'ameen Dalha</span>
+                </h1>
+                <p class="hero-subtitle fade-in-up fade-in-delay-1">
+                    A passionate Django developer with 4 years of real-world experience building functional, backend-driven web solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Journey Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">My Journey</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="story-card fade-in-up">
+                        <p class="story-text">
+                            I studied <strong>Computer Science</strong> at <strong>Bayero University, Kano</strong>, where my passion for building solutions was sparked. While many just studied theory, I dove deep into real-world application — learning, experimenting, and solving problems through code.
+                        </p>
+                        <p class="story-text">
+                            Over the past 4 years, I've worked with <strong>Python</strong>, <strong>Django</strong>, <strong>HTML</strong>, <strong>CSS</strong>, <strong>Bootstrap</strong>, and tools like <strong>Celery</strong>, <strong>Redis</strong>, and <strong>Signals</strong> — building and maintaining web applications from scratch.
+                        </p>
+                        <p class="story-text">
+                            I'm now actively looking for a role where I can <strong>grow</strong>, <strong>contribute</strong>, and <strong>keep building</strong> meaningful products — especially ones that solve real problems across Africa and beyond.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why I Do What I Do Section -->
+    <section class="motivation-section">
+        <div class="container">
+            <h2 class="motivation-title">Why I Do What I Do</h2>
+            <div class="motivation-text">
+                <strong>I build because it matters.</strong> For me, tech isn't just about writing clean code — it's about changing lives. I grew up seeing gaps in how people access opportunities, tools, and information. So I code to <strong>bridge that gap</strong>, to help create solutions that are inclusive, scalable, and impactful.
+            </div>
+            <div class="motivation-text">
+                Every project I've built has made me better — not just technically, but personally. It's my way of growing and giving back.
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Snapshot Section -->
+    <section class="content-section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Skills Snapshot</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in-up">
+                    <div class="skill-category-title">
+                        <div class="skill-category-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        Backend Development
+                    </div>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Django</span>
+                        <span class="skill-badge">Celery</span>
+                        <span class="skill-badge">Redis</span>
+                        <span class="skill-badge">Signals</span>
+                        <span class="skill-badge">RESTFramework</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in-up fade-in-delay-1">
+                    <div class="skill-category-title">
+                        <div class="skill-category-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        Frontend Development
+                    </div>
+                    <div class="skill-badges">
+                        <span class="skill-badge">HTML</span>
+                        <span class="skill-badge">CSS</span>
+                        <span class="skill-badge">Bootstrap</span>
+                        <span class="skill-badge">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in-up fade-in-delay-2">
+                    <div class="skill-category-title">
+                        <div class="skill-category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        Tools & Technologies
+                    </div>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">GitHub</span>
+                        <span class="skill-badge">PostgreSQL</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">Render</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Let's Build Something Amazing Together</h2>
+            <p class="cta-text">
+                Ready to connect? I'm always open to discussing opportunities, collaborating on projects, or just having a chat about technology and its potential to create positive change.
+            </p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
+                <a href="{% url 'contact:contact' %}" class="btn btn-primary-custom">
+                    <i class="fas fa-envelope me-2"></i>Get In Touch
+                </a>
+                <a href="{% url 'myport:projects' %}" class="btn btn-outline-custom">
+                    <i class="fas fa-code me-2"></i>View My Work
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+
+{% block script %}
+{% include 'myport/includes/js/about.js' %}
+{% endblock script %}

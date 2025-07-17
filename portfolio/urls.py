@@ -25,8 +25,6 @@ urlpatterns = [
     path('', include('myport.urls')),  # Include URLs from the myport app
 ]
 
-# For static files in production
 
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

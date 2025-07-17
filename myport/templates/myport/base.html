@@ -73,10 +73,7 @@
         }
         
     </style>
-    <style>
-        {% block style %}
-        {% endblock style %}
-    </style>
+    <link rel="stylesheet" href="{% block style %}{% endblock style %}">
 </head>
 <body>
     {% include 'myport/includes/html_docs/navbar.html' %}
@@ -89,9 +86,10 @@
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        {% block script %}
-        {% endblock script %}
+    <script src="
+    {% block script %}
+    {% endblock script %}    
+    ">
     </script>
 </body>
 </html>

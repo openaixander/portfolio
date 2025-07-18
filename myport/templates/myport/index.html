@@ -1,11 +1,13 @@
 {% extends 'myport/base.html' %}
-
+{% load static %}
 
 {% block title %}
     Al'ameen Dalha - Django Developer
 {% endblock title %}
 
-
+{% block style %}
+    <link rel="stylesheet" href="{% static 'myport/css/homepage.css' %}">
+{% block style %}
 
 
 {% block content %}
@@ -170,3 +172,7 @@
 
  {% endblock content %}   
 
+{% block script %}
+   <script src="{% static 'myport/js/homepage.js' %}"></script>
+{% endblock script %}
+    

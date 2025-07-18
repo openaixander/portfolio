@@ -1,14 +1,12 @@
 {% extends 'myport/base.html' %}
-{% load static %}
+
 
 {% block title %}
     Al'ameen Dalha - Django Developer
 {% endblock title %}
 
 
-{% block style %}
-    <link rel="stylesheet" href="{% static 'files/css/homepage.css' %}">
-{% endblock style %}
+
 
 {% block content %}
     <!-- Hero Section -->
@@ -31,7 +29,7 @@
                         </div>
 
                         <div class="d-flex flex-wrap gap-3 fade-in-up fade-in-delay-3">
-                            <a href="{% url 'myport:projects' %}" class="btn btn-primary-custom">
+                            <a href="" class="btn btn-primary-custom">
                                 <i class="fas fa-code me-2"></i>View My Projects
                             </a>
                             <a href=""  class="btn btn-outline-custom">
@@ -44,7 +42,7 @@
                     <!-- Replace this with your actual photo -->
                     <div class="avatar-placeholder fade-in-up">
                         <!-- <i class="fas fa-user"></i> -->
-                        <img src="{% static 'images/developer.jpg' %}" alt="Al'ameen Dalha" class="profile-image fade-in-up">
+                        <img src="" alt="Al'ameen Dalha" class="profile-image fade-in-up">
                     </div>
                     <!-- When you have your photo, replace the avatar-placeholder div with:
                     -->
@@ -172,7 +170,3 @@
 
  {% endblock content %}   
 
-{% block script %}
-   <script src="{% static 'includes/js/homepage.js' %}"></script>
-{% endblock script %}
-    

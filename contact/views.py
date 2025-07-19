@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages  # Import Django's messaging framework
 from .forms import ContactForm
 
-def contact_view(request):
+def contact(request):
     """
     Handles the display and processing of the contact form.
     """

@@ -130,6 +130,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Where static files are stored during collectstatic (for production)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# In production, use WhiteNoise to serve static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG:
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)

@@ -21,7 +21,7 @@ class ContactSubmission(models.Model):
         
         # Sets a more readable name for the model in the admin interface.
         verbose_name = "Contact Submission"
-         verbose_name_plural = "Contact Submissions"
+        verbose_name_plural = "Contact Submissions"
 
     def __str__(self):
         # This is how each submission will be represented as a string,

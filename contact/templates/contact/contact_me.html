@@ -1,0 +1,147 @@
+{% extends 'myport/base.html' %}
+{% load static %}
+
+{% block title %}
+Contact - Al'ameen Dalha - Django Developer
+{% endblock title %}
+
+{% block style %}
+    {% static 'contact/css/contact.css' %}
+{% endblock style %}
+
+{% block style %}
+    {% static 'contact/js/contact.js' %}
+{% endblock style %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="contact" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in-up">
+                    Let's <span class="highlight">Connect</span>
+                </h1>
+                <p class="hero-subtitle fade-in-up fade-in-delay-1">
+                    Whether you're a recruiter, fellow developer, or just someone interested in my work, I'd love to hear from you. Feel free to reach out — I'm open to new opportunities, collaborations, or just an insightful conversation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Contact Form Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <div class="contact-form fade-in-up">
+                    <h3 class="mb-4 text-center">Send Me a Message</h3>
+                    <form action="{% url 'contact:contact' %}" method="POST" id="contactForm">
+                        {% csrf_token %}
+
+                        {% include 'contact/includes/html_docs/alerts.html' %}
+
+                        <div class="form-group">
+                            <label for="{{ form.name.id_for_label }}" class="form-label">Name</label>
+                            <!-- <input type="text" id="name" name="name" class="form-control" required> -->
+                             {{ form.name }}
+                             {{ form.name.errors }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+                            <!-- <input type="email" id="email" name="email" class="form-control" required> -->
+                             {{ form.email }}
+                             {{ form.email.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.message.id_for_label }}" class="form-label">Message</label>
+                            <!-- <textarea id="message" name="message" class="form-control" rows="5" required></textarea> -->
+                             {{ form.message }}
+                             {{ form.message.errors }}
+                        </div>
+                        <button type="submit" class="btn-primary-custom">
+                            <i class="fas fa-paper-plane me-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Direct Email Section -->
+                <div class="email-section fade-in-up fade-in-delay-1">
+                    <h3 class="email-title">Or Email Me Directly</h3>
+                    <div class="email-address">📧 waziria895@gmail.com</div>
+                    <div class="email-buttons">
+                        <a href="mailto:waziria895@gmail.com" class="btn-email">
+                            <i class="fas fa-envelope"></i>
+                            Open Email Client
+                        </a>
+                        <button class="btn-email btn-copy" onclick="copyEmail()">
+                            <i class="fas fa-copy"></i>
+                            Copy Email
+                        </button>
+                    </div>
+                </div>
+                <!-- Professional Links Section -->
+                <div class="social-links-section fade-in-up fade-in-delay-2">
+                    <h3 class="social-title">Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <div class="social-icon github">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="social-text">
+                                <h6>GitHub</h6>
+                                <p>View my code and projects</p>
+                            </div>
+                        </a>
+                        <a href="#" class="social-link">
+                            <div class="social-icon linkedin">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="social-text">
+                                <h6>LinkedIn</h6>
+                                <p>Professional profile</p>
+                            </div>
+                        </a>
+                        <a href="#" class="social-link">
+                            <div class="social-icon twitter">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                            <div class="social-text">
+                                <h6>Twitter</h6>
+                                <p>Tech discussions & updates</p>
+                            </div>
+                        </a>
+                        <a href="" class="social-link" download="Alameen_Dalha_Resume.pdf">
+                            <div class="social-icon resume">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="social-text">
+                                <h6>Download Resume</h6>
+                                <p>View my complete profile</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="cta-section fade-in-up fade-in-delay-3">
+                    <h3 class="cta-title">Let's build something meaningful together.</h3>
+                    <p class="cta-text">I'm always eager to meet new people, tackle exciting challenges, and grow — one project at a time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast for notifications -->
+    <div class="toast-container">
+        <div id="emailToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+                Email address copied to clipboard!
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    {% static 'contact/js/contact.js' %}
+{% endblock script %}

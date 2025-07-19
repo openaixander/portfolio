@@ -6,11 +6,7 @@ Contact - Al'ameen Dalha - Django Developer
 {% endblock title %}
 
 {% block style %}
-    {% static 'contact/css/contact.css' %}
-{% endblock style %}
-
-{% block style %}
-    {% static 'contact/js/contact.js' %}
+    <link rel="stylesheet" href="{% static 'contact/css/contact.css' %}"> 
 {% endblock style %}
 
 {% block content %}
@@ -143,5 +139,5 @@ Contact - Al'ameen Dalha - Django Developer
 {% endblock content %}
 
 {% block script %}
-    {% static 'contact/js/contact.js' %}
+    <script src="{% static 'contact/js/contact.js' %}"></script>
 {% endblock script %}

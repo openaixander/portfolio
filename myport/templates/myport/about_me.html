@@ -6,7 +6,7 @@ About - Al'ameen Dalha - Django Developer
 
 
 {% block style %}
-    {% static 'myport/css/about.css' %}
+    <link rel="stylesheet" href="{% static 'myport/css/about.css' %}">
 {% endblock style %}
 
 {% block content %}
@@ -136,5 +136,5 @@ About - Al'ameen Dalha - Django Developer
 
 
 {% block script %}
-    {% static 'myport/js/about.js' %}
+  <script src="{% static 'myport/js/about.js' %}"></script>
 {% endblock script %}

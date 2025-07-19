@@ -5,7 +5,7 @@
 
 
 {% block style %}
-    {% static 'myport/css/projects.css %}
+    <link rel="stylesheet" href="{% static 'myport/css/projects.css' %}">
 {% endblock style %}
    
 
@@ -108,5 +108,5 @@
 {% endblock content %}
 
 {% block script %}
-    {% static 'myport/js/projects.js' %}
+   <script src="{% static 'myport/js/projects.js' %}"></script>
 {% endblock script %}

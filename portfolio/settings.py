@@ -34,7 +34,8 @@ ALLOWED_HOSTS = ['alameen-portfolio.onrender.com']
 INSTALLED_APPS = [
     'myport',
     'jazzmin',
-
+    'contact',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

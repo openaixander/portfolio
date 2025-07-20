@@ -5,7 +5,7 @@ from .models import Project
 # Create your views here.
 
 def index(request):
-    return render(request, 'myport/homepage.html')
+    return render(request, 'myport/index.html')
 
 def projects(request):
     # Here you would typically fetch projects from the database

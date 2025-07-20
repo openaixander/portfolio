@@ -80,7 +80,7 @@ Contact - Al'ameen Dalha - Django Developer
                 <div class="social-links-section fade-in-up fade-in-delay-2">
                     <h3 class="social-title">Connect With Me</h3>
                     <div class="social-links">
-                        <a href="#" class="social-link">
+                        <a href="https://github.com/openaixander/" class="social-link">
                             <div class="social-icon github">
                                 <i class="fab fa-github"></i>
                             </div>
@@ -89,7 +89,7 @@ Contact - Al'ameen Dalha - Django Developer
                                 <p>View my code and projects</p>
                             </div>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://www.linkedin.com/in/alameen-dalha-3665b3244/" class="social-link">
                             <div class="social-icon linkedin">
                                 <i class="fab fa-linkedin"></i>
                             </div>
@@ -98,7 +98,7 @@ Contact - Al'ameen Dalha - Django Developer
                                 <p>Professional profile</p>
                             </div>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://x.com/aymeen___" class="social-link">
                             <div class="social-icon twitter">
                                 <i class="fab fa-twitter"></i>
                             </div>
@@ -107,7 +107,7 @@ Contact - Al'ameen Dalha - Django Developer
                                 <p>Tech discussions & updates</p>
                             </div>
                         </a>
-                        <a href="" class="social-link" download="Alameen_Dalha_Resume.pdf">
+                        <a href="{% static 'myport/file/Alameen_Dalha.pdf' %}" class="social-link" download="Alameen_Dalha_Resume.pdf">
                             <div class="social-icon resume">
                                 <i class="fas fa-file-pdf"></i>
                             </div>
@@ -137,6 +137,10 @@ Contact - Al'ameen Dalha - Django Developer
         </div>
     </div>
 {% endblock content %}
+
+{% block footer %}
+    {% include 'contact/includes/html_docs/contact_footer.html' %}
+{% endblock footer %}
 
 {% block script %}
     <script src="{% static 'contact/js/contact.js' %}"></script>

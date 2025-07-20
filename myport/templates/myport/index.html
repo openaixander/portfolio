@@ -5,7 +5,6 @@
 Al'ameen Dalha - Django Developer
 {% endblock title %}
 
-
 {% block style %}
     <link rel="stylesheet" href="{% static 'myport/css/index.css' %}">
 {% endblock style %}
@@ -16,13 +15,13 @@ Al'ameen Dalha - Django Developer
     <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-1 order-2">
+                <div class="col-lg-6 mt-5 order-lg-1 order-2">
                     <div class="hero-content">
                         <h1 class="hero-title fade-in-up">
                             Hi, I'm <span class="highlight">Al'ameen Dalha</span>
                         </h1>
                         <p class="hero-subtitle fade-in-up fade-in-delay-1">
-                            A Django Developer building real-world solutions with code
+                            A Backend - Django Developer building real-world solutions with code
                         </p>
                         
                         <div class="mb-4 fade-in-up fade-in-delay-2">
@@ -32,16 +31,16 @@ Al'ameen Dalha - Django Developer
                         </div>
 
                         <div class="d-flex flex-wrap gap-3 fade-in-up fade-in-delay-3">
-                            <a href="#projects" class="btn btn-primary-custom">
+                            <a href="{% url 'myport:projects' %}" class="btn btn-primary-custom">
                                 <i class="fas fa-code me-2"></i>View My Projects
                             </a>
-                            <a href="#" class="btn btn-outline-custom">
+                            <a href="{% static 'myport/file/Alameen_Dalha.pdf' %}" class="btn btn-outline-custom">
                                 <i class="fas fa-download me-2"></i>Download Resume
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 order-lg-2 order-1 text-center mb-4 mb-lg-0">
+                <div class="mt-5 col-lg-6 order-lg-2 order-1 text-center mb-4 mb-lg-0">
                     <!-- Replace this with your actual photo -->
                     <div class="avatar-placeholder fade-in-up">
                         <!-- <i class="fas fa-user"></i> -->
@@ -170,8 +169,9 @@ Al'ameen Dalha - Django Developer
             </div>
         </div>
     </section>
+
 {% endblock content %}
 
-{% block script %}
+{% block scripts %}
     <script src="{% static 'myport/js/index.js' %}"></script>
-{% endblock script %}
+{% endblock scripts %}

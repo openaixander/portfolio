@@ -15,6 +15,7 @@ from decouple import config
 import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+import cloudinary
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-!@#%$^&*()_+')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['alameen-portfolio.onrender.com']
+ALLOWED_HOSTS = ['alameen-portfolio.onrender.com', 'localhost',]
 
 
 # Application definition
@@ -35,6 +36,7 @@ INSTALLED_APPS = [
     'myport',
     'jazzmin',
     'contact',
+    'cloudinary',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -137,9 +139,19 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",  # This is your custom static folder
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Media files (User-uploaded content)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'  # Directory where media files will be stored
+
+cloudinary.config( 
+  cloud_name = "my_cloud_name", 
+  api_key = "my_key", 
+  api_secret = "my_secret"
+)

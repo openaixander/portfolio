@@ -1,6 +1,6 @@
 # myport/admin.py
 from django.contrib import admin
-from .models import Technology, Project, ProjectImage, Feature
+from .models import Technology, Project, ProjectImage, Feature, DeveloperImage
 
 # Allows you to add images and features directly when editing a project
 class ProjectImageInline(admin.TabularInline):
@@ -21,3 +21,8 @@ class ProjectAdmin(admin.ModelAdmin):
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
     search_fields = ('name',)
+
+@admin.register(DeveloperImage)
+class DeveloperImageAdmin(admin.ModelAdmin):
+    list_display = ('image', 'alt_text')
+    search_fields = ('alt_text',)

@@ -1,5 +1,7 @@
 # myport/models.py
 from django.db import models
+from cloudinary.models import CloudinaryField
+
 
 class Technology(models.Model):
     """Represents a technology or tool, like 'Django' or 'Python'."""
@@ -34,7 +36,7 @@ class Project(models.Model):
 class ProjectImage(models.Model):
     """Represents a screenshot for a project's carousel."""
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to='project_screenshots/', help_text="Upload a screenshot for the project.")
+    image = CloudinaryField('project_screenshots/', help_text="Upload a screenshot for the project.")
     alt_text = models.CharField(max_length=100, blank=True, help_text="Alt text for the image, for accessibility.")
 
     def __str__(self):
@@ -47,3 +49,11 @@ class Feature(models.Model):
 
     def __str__(self):
         return self.description
+
+class DeveloperImage(models.Model):
+    """Represents a developer's profile image."""
+    image = CloudinaryField('developer_images/', help_text="Upload a profile image for the developer.")
+    alt_text = models.CharField(max_length=100, blank=True, help_text="Alt text for the image, for accessibility.")
+
+    def __str__(self):
+        return "Developer Image"

@@ -42,10 +42,18 @@ Al'ameen Dalha - Django Developer
                 </div>
                 <div class="mt-5 col-lg-6 order-lg-2 order-1 text-center mb-4 mb-lg-0">
                     <!-- Replace this with your actual photo -->
+                    {% if developer_image %}
                     <div class="avatar-placeholder fade-in-up">
                         <!-- <i class="fas fa-user"></i> -->
-                        <img src="{% static 'myport/image/developer.jpg' %}" alt="Al'ameen Dalha" class="profile-image fade-in-up">
+                        <img src="{{ developer_image.image.url }}" alt="Al'ameen Dalha" class="profile-image fade-in-up">
                     </div>
+                    {% else %}
+                    <!-- Placeholder for when the developer image is not available -->
+                    <div class="avatar-placeholder fade-in-up">
+                        <i class="fas fa-user"></i>
+                        <!-- <img src="{% static 'myport/image/developer.jpg' %}" alt="Al'ameen Dalha" class="profile-image fade-in-up"> -->
+                    </div>
+                    {% endif %}
                     <!-- When you have your photo, replace the avatar-placeholder div with:
                     -->
                 </div>

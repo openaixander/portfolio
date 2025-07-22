@@ -1,11 +1,20 @@
 from django.shortcuts import render
 
-from .models import Project
+from .models import Project, DeveloperImage
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'myport/index.html')
+    """Render the homepage."""
+    # You can pass any context variables you need to the template here
+    developer_image = DeveloperImage.objects.first()  # Assuming you have a single developer image
+    
+    context = {
+        'developer_image': developer_image,
+    }
+
+
+    return render(request, 'myport/index.html', context)
 
 def projects(request):
     # Here you would typically fetch projects from the database

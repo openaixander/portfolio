@@ -25,7 +25,7 @@ import cloudinary
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-!@#%$^&*()_+')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['alameen-portfolio.onrender.com', 'localhost',]
 

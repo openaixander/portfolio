@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('portfolio-alameen/admin/', admin.site.urls),
     path('', include('myport.urls')),  # Include URLs from the myport app
     path('contact/', include('contact.urls')),  # Include URLs from the contact app
 ]

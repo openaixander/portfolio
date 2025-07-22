@@ -25,7 +25,7 @@ import cloudinary
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-!@#%$^&*()_+')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['alameen-portfolio.onrender.com', 'localhost',]
 
@@ -142,7 +142,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",  # This is your custom static folder
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Set the default file storage to Cloudinary.
 # This tells Django to use Cloudinary for all media file uploads.
